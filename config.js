@@ -1,69 +1,120 @@
-// ============================================
-// 💝 CUSTOMIZE YOUR VALENTINE'S WEBSITE HERE 💝
-// ============================================
-
-const CONFIG = {
-    // Your Valentine's name that will appear in the title
-    // Example: "Jade", "Sarah", "Mike"
-    valentineName: "Ankita",
-
-    // The title that appears in the browser tab
-    // You can use emojis! 💝 💖 💗 💓 💞 💕
-    pageTitle: "Will You Be My Valentine? 💝",
-
-    // Floating emojis that appear in the background
-    // Find more emojis at: [https://emojipedia.org](https://emojipedia.org)
-    floatingEmojis: {
-        hearts: ['❤️', '💖', '💝', '💗', '💓'],  // Heart emojis
-        bears: ['🧸', '🐻']                       // Cute bear emojis
-    },
-
-    // Questions and answers
-    // Customize each question and its possible responses
-    questions: {
-            text: "Will you be my Valentine? 🌹", // The big question!
-            yesBtn: "Yes!",                                             // Text for "Yes" button
-            noBtn: "No"                                                 // Text for "No" button
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Be My Valentine, Ankita?</title>
+    <style>
+        body {
+            background: linear-gradient(135deg, #ff9a9e 0%, #fecfef 50%, #fad0c4 100%);
+            color: #6a0c6a;
+            font-family: Arial;
+            text-align: center;
+            padding: 50px 20px;
+            margin: 0;
         }
-    },
+        h1 {
+            font-size: 40px;
+            color: #c71585;
+            margin: 40px 0;
+        }
+        p {
+            font-size: 24px;
+            margin: 30px 0;
+        }
+        button {
+            padding: 20px 40px;
+            font-size: 20px;
+            margin: 20px;
+            border: none;
+            border-radius: 30px;
+            cursor: pointer;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.3);
+        }
+        .yes {
+            background: #ff6b9d;
+            color: white;
+        }
+        .no {
+            background: #ffeaa7;
+            color: #6a0c6a;
+            font-weight: bold;
+        }
+        .hearts {
+            position: fixed;
+            font-size: 30px;
+            animation: float 5s infinite linear;
+            pointer-events: none;
+        }
+        @keyframes float {
+            0% { top: 100%; opacity: 0; }
+            10% { opacity: 1; }
+            90% { opacity: 1; }
+            100% { top: -10%; opacity: 0; }
+        }
+    </style>
+</head>
+<body>
+    <!-- Hearts -->
+    <div class="hearts" style="left: 10%; animation-delay: 0s;">💖</div>
+    <div class="hearts" style="left: 20%; animation-delay: 1s;">💕</div>
+    <div class="hearts" style="left: 40%; animation-delay: 2s;">💗</div>
+    <div class="hearts" style="left: 60%; animation-delay: 0.5s;">💝</div>
+    <div class="hearts" style="left: 80%; animation-delay: 3s;">❤️</div>
 
-    // Messages that appear after they say "Yes!"
-    celebration: {
-        title: "Yay! I'm the luckiest person in the world! 🎉💝💖💝💓",
-        message: "Now come get your gift, a big warm hug and a huge kiss!",
-        emojis: "🎁💖🤗💝💋❤️💕"  // These will bounce around
-    },
+    <h1>Will you be my Valentine, Ankita?</h1>
+    <p>Let's make this day unforgettable! 🌹💕✨</p>
+    <br><br>
+    <button class="yes" onclick="yesResponse()">Yes, of course! 💕✨</button>
+    <button class="no" id="noButton">No 😢</button>
 
-    // Color scheme for the website
-    // Use [https://colorhunt.co](https://colorhunt.co) or [https://coolors.co](https://coolors.co) to find beautiful color combinations
-    colors: {
-        backgroundStart: "#ffafbd",      // Gradient start (try pastel colors for a soft look)
-        backgroundEnd: "#ffc3a0",        // Gradient end (should complement backgroundStart)
-        buttonBackground: "#ff6b6b",     // Button color (should stand out against the background)
-        buttonHover: "#ff8787",          // Button hover color (slightly lighter than buttonBackground)
-        textColor: "#ff4757"             // Text color (make sure it's readable!)
-    },
+    <script>
+        let clicks = 0;
+        const messages = [
+            "Are you serious?", 
+            "Don't break my heart!", 
+            "Think again, please!", 
+            "You know you want to!", 
+            "Pretty please? 🥺"
+        ];
 
-    // Animation settings
-    // Adjust these if you want faster/slower animations
-    animations: {
-        floatDuration: "15s",           // How long it takes hearts to float up (10-20s recommended)
-        floatDistance: "50px",          // How far hearts move sideways (30-70px recommended)
-        bounceSpeed: "0.5s",            // Speed of bouncing animations (0.3-0.7s recommended)
-        heartExplosionSize: 1.5         // Size of heart explosion effect (1.2-2.0 recommended)
-    },
+        function yesResponse() {
+            document.body.innerHTML = `
+                <style>
+                    body { 
+                        background: linear-gradient(135deg, #a8e6cf 0%, #dcedc1 50%, #ffd3a5 100%);
+                        color: #2d5016; padding: 50px 20px; margin: 0; text-align: center; 
+                    }
+                    h1 { font-size: 50px; color: #dc143c; margin: 40px 0; }
+                    p { font-size: 28px; margin: 25px 0; }
+                    .hearts { font-size: 35px; margin: 30px 0; }
+                </style>
+                <h1>🎉 YAY ANKITA! 🎉</h1>
+                <p>I love you so much! ❤️💕</p>
+                <div class="hearts">💖💕❤️💝💗💖💕❤️💝💗</div>
+                <p>You're my forever Valentine! 💋✨</p>
+            `;
+        }
 
-    // Background Music (Optional)
-    // Add your own music URL after getting proper licenses
-    music: {
-        enabled: true,                     // Music feature is enabled
-        autoplay: true,                    // Try to autoplay (note: some browsers may block this)
-        musicUrl: "https://res.cloudinary.com/dncywqfpb/video/upload/v1738399057/music_qrhjvy.mp3", // Music streaming URL
-        startText: "🎵 Play Music",        // Button text to start music
-        stopText: "🔇 Stop Music",         // Button text to stop music
-        volume: 0.5                        // Volume level (0.0 to 1.0)
-    }
-};
+        function moveButton() {
+            const btn = document.getElementById('noButton');
+            btn.style.position = 'absolute';
+            btn.style.left = (Math.random() * 400) + 'px';
+            btn.style.top = (Math.random() * 400) + 'px';
+        }
 
-// Don't modify anything below this line unless you know what you're doing
-window.VALENTINE_CONFIG = CONFIG;
+        function noClick() {
+            clicks++;
+            const btn = document.getElementById('noButton');
+            if (clicks <= messages.length) {
+                btn.innerHTML = messages[clicks-1];
+            } else {
+                alert("😍 Haha gotcha Ankita! It's a YES anyway! 💕");
+                return;
+            }
+            setTimeout(moveButton, 200);
+        }
+
+        document.getElementById('noButton').onmouseover = moveButton;
+        document.getElementById('noButton').onclick = noClick;
+    </script>
+</body>
+</html>

@@ -1,87 +1,89 @@
+// ============================================
+// 💝 CUSTOMIZE YOUR VALENTINE'S WEBSITE HERE 💝
+// ============================================
+
 const CONFIG = {
-    // Your Valentine's name 
-    valentineName: "Ankita 💖",  // Added sparkle ✨
+    // Your Valentine's name that will appear in the title
+    // Example: "Jade", "Sarah", "Mike"
+    valentineName: "Ankita",
 
-    // Enhanced title with Hindi touch
-    pageTitle: "Ankita, Meri Valentine Banogi? 💝🌹",
+    // The title that appears in the browser tab
+    // You can use emojis! 💝 💖 💗 💓 💞 💕
+    pageTitle: "Will You Be My Valentine? 💝",
 
-    // More floating emojis including Indian elements
+    // Floating emojis that appear in the background
+    // Find more emojis at: [https://emojipedia.org](https://emojipedia.org)
     floatingEmojis: {
-        hearts: ['❤️', '💖', '💝', '💗', '💓', '🌹', '💍'],  
-        bears: ['🧸', '🐻', '🐘', '🦋'],  // Added Indian elephant & butterfly
-        special: ['🌺', '💐', '🪔']       // Flowers & diya for desi vibe
+        hearts: ['❤️', '💖', '💝', '💗', '💓'],  // Heart emojis
+        bears: ['🧸', '🐻']                       // Cute bear emojis
     },
 
-    // Enhanced questions with better responses
+    // Questions and answers
+    // Customize each question and its possible responses
     questions: {
         first: {
-            text: "Ankita, do you like me? 😍",
-            yesBtn: "Haan ji! ❤️",      // Hindi "Yes"
-            noBtn: "Nahi",              // Hindi "No"  
-            secretAnswer: "Arre pagli, main toh pyaar karti hu! 😘💕"
+            text: "Do you like me?",                                    // First interaction
+            yesBtn: "Yes",                                             // Text for "Yes" button
+            noBtn: "No",                                               // Text for "No" button
+            secretAnswer: "I don't like you, I love you! ❤️"           // Secret hover message
         },
         second: {
-            text: "Ankita, how much do you love me? 💖",
-            startText: "Itnaaa! ➡️",    
-            nextBtn: "Aur dikhao! 🌹"
+            text: "How much do you love me?",                          // For the love meter
+            startText: "This much!",                                   // Text before the percentage
+            nextBtn: "Next ❤️"                                         // Text for the next button
         },
         third: {
-            text: "Ankita, will you be my Valentine this year? 💍🌹",
-            yesBtn: "Haan! Main teri Valentine! 💝",  
-            noBtn: "No pe No click nahi hoga! 😜"  // Teasing message
+            text: "Will you be my Valentine? 🌹", // The big question!
+            yesBtn: "Yes!",                                             // Text for "Yes" button
+            noBtn: "No"                                                 // Text for "No" button
         }
     },
 
-    // Enhanced love meter messages
+    // Love meter messages
+    // They show up depending on how far they slide the meter
     loveMessages: {
-        extreme: "Ankitaaaa! Itna pyaar? 🚀💥 Main pagal ho jaungi! 😍",
-        high: "Toh infinity! Aur usse bhi aage! 🌌💖", 
-        normal: "Bas yahi? Aur dikhao naa! 🥰"
+        extreme: "WOOOOW You love me that much?? 🥰🚀💝",  // Shows when they go past 5000%
+        high: "To infinity and beyond! 🚀💝",              // Shows when they go past 1000%
+        normal: "And beyond! 🥰"                           // Shows when they go past 100%
     },
 
-    // Better celebration messages
+    // Messages that appear after they say "Yes!"
     celebration: {
-        title: "YIPPPIIIEE! Ankita meri Valentine! 🎉💃🕺💖",
-        message: "Ab milne aa jao! Bada sa hug + kiss waiting! 😘💝\nP.S. Surprise gift bhi hai! 🎁✨",
-        emojis: "🎁💖🤗💋❤️💕🌹💍🎂🥳💃🕺"  // More celebration emojis
+        title: "Yay! I'm the luckiest person in the world! 🎉💝💖💝💓",
+        message: "Now come get your gift, a big warm hug and a huge kiss!",
+        emojis: "🎁💖🤗💝💋❤️💕"  // These will bounce around
     },
 
-    // 2026 trending romantic gradient (rose gold + blush)
+    // Color scheme for the website
+    // Use [https://colorhunt.co](https://colorhunt.co) or [https://coolors.co](https://coolors.co) to find beautiful color combinations
     colors: {
-        backgroundStart: "#f8b8d0",    // Soft blush pink
-        backgroundEnd: "#ffccd5",      // Rose gold blush  
-        buttonBackground: "#ff69b4",   // Hot pink (stands out)
-        buttonHover: "#ff85c0",        // Lighter pink hover
-        textColor: "#c71585"           // Medium violet red (readable)
+        backgroundStart: "#ffafbd",      // Gradient start (try pastel colors for a soft look)
+        backgroundEnd: "#ffc3a0",        // Gradient end (should complement backgroundStart)
+        buttonBackground: "#ff6b6b",     // Button color (should stand out against the background)
+        buttonHover: "#ff8787",          // Button hover color (slightly lighter than buttonBackground)
+        textColor: "#ff4757"             // Text color (make sure it's readable!)
     },
 
-    // Enhanced animations 
+    // Animation settings
+    // Adjust these if you want faster/slower animations
     animations: {
-        floatDuration: "12s",          // Slightly faster floating
-        floatDistance: "60px",         // More side movement
-        bounceSpeed: "0.4s",           // Faster bounce
-        heartExplosionSize: 2.0        // Bigger celebration explosion
+        floatDuration: "15s",           // How long it takes hearts to float up (10-20s recommended)
+        floatDistance: "50px",          // How far hearts move sideways (30-70px recommended)
+        bounceSpeed: "0.5s",            // Speed of bouncing animations (0.3-0.7s recommended)
+        heartExplosionSize: 1.5         // Size of heart explosion effect (1.2-2.0 recommended)
     },
 
-    // Enhanced music settings
+    // Background Music (Optional)
+    // Add your own music URL after getting proper licenses
     music: {
-        enabled: true,
-        autoplay: false,               // Changed to false (browser policy)
-        musicUrl: "https://res.cloudinary.com/dncywqfpb/video/upload/v1738399057/music_qrhjvy.mp3",
-        startText: "🎶 Romantic Music ON 🔊",
-        stopText: "🔇 Music OFF", 
-        volume: 0.4                    // Slightly lower volume
-    },
-
-    // 🔥 NEW FEATURES ADDED 🔥
-    newFeatures: {
-        // Playful NO button that runs away (viral feature!)
-        noButtonMoves: true,
-        // Confetti explosion on YES
-        confettiEnabled: true,
-        // Mobile-first optimizations
-        mobileOptimized: true,
-        // Auto heart rain after celebration
-        heartRain: true
+        enabled: true,                     // Music feature is enabled
+        autoplay: true,                    // Try to autoplay (note: some browsers may block this)
+        musicUrl: "https://res.cloudinary.com/dncywqfpb/video/upload/v1738399057/music_qrhjvy.mp3", // Music streaming URL
+        startText: "🎵 Play Music",        // Button text to start music
+        stopText: "🔇 Stop Music",         // Button text to stop music
+        volume: 0.5                        // Volume level (0.0 to 1.0)
     }
 };
+
+// Don't modify anything below this line unless you know what you're doing
+window.VALENTINE_CONFIG = CONFIG;
